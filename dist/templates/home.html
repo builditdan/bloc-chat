@@ -1,1 +1,44 @@
-<h1>Home Page</h1>
+<div id="col1">
+
+  
+  
+    <div ng-controller="conversationController">
+      <div id="conversation-title">Conversations</div>
+      <button id="new-button" ng-click="askConversation()">New</button>
+      <img src="assets/images/blue-line.png" width="100%">
+   
+      <br>
+      
+      <ul>
+        <li ng-repeat="elem in conversationList | orderBy:'-dateAdded' : reverse">
+          <div id="conversation-block-0">
+            <p id="conversation-topic" ng-dblclick="deleteConversation(elem)">{{elem.conversation}}</p>
+            <p id="conversation-date">{{formatDate(elem.dateAdded)}}</p>
+          </div>
+          <div id="conversation-block-1">
+            <p id="last-message">{{elem.last_comment}}</p>
+          </div>
+          <div id="conversation-block-2">
+            
+              <img id="conversation-image" src="{{elem.topic_image}}">
+       
+          </div>
+          
+        </li>
+      </ul>
+      
+      
+      <input type="file" id="btnOpenFileDialog" />
+      
+    </div>
+  
+</div>
+
+<!--
+<canvas id="myCanvas" width="500" height="500"
+style="border:1px solid #d3d3d3;">
+  <img id="scream">
+Your browser does not support the HTML5 canvas tag.</canvas>
+-->
+
+  

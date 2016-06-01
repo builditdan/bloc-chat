@@ -1,0 +1,138 @@
+body {margin:0; }
+
+#header {
+    
+    background: blue; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(blue, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(blue, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(blue, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(blue, white); /* Standard syntax */
+    color:white;
+    text-align:center;
+    height:150px;
+    background-size: cover;
+    width:100%
+}
+
+#col1 {
+    line-height:30px;
+    background-color:#E9E9E9;
+    height:100%;
+    width:35%;
+    float:left;
+    padding-top:5px;
+    padding-bottom:5px;
+    margin-right:100px;
+    margin-top:25px;
+    margin-left: 10px;
+    min-width: 275px;
+}
+
+#col2 {
+    background-color:white;
+    width:65%;
+    float: left; 
+    margin-top:25px;
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;	 	 
+}
+
+#conversation-title {
+  font-size: 40px;
+  margin-left:10px;
+  margin-top:30px;
+  float:left;
+}
+
+#conversation-topic {
+  float:left;
+  margin-left:8px;
+}
+
+#conversation-date {
+  float:right;
+  margin-right:8px;
+}
+
+#conversation-block-0 {
+  font-size: 20px;
+  font-weight: 500;
+  
+}
+
+#conversation-block-1 {
+  width: 70%;
+}
+
+#last-message {
+  float:left;
+  font-size: 15px;
+  margin-left:8px;
+  clear:both;
+
+}
+
+#conversation-block-2 {
+  width: 30%;
+  float:right;
+}
+
+
+#conversation-image {
+  margin:5px;
+  float:right;
+}
+
+
+ul
+{
+    list-style-type: none;
+    padding:0px;
+    height:100%;
+    width:100%;
+}
+
+li {
+  height:220px;
+}
+
+li:nth-child(odd) { 
+  background: #9BA1A0; 
+}
+
+#delete-button {
+  width:15px;
+  height:15px;
+  margin-right:5px;
+}
+
+#new-button {
+  background-color:#139847;
+  color: white;
+  padding: 10px 40px;
+  float: right;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  margin: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  
+}
+
+#conversation-image {
+  /*margin-left: 125px;*/
+ display: block;
+ margin-top: 60px;
+ margin-left: auto;
+ margin-right: 20px;
+ width:125px;
+ height:100px;
+}
+

@@ -1,10 +1,10 @@
 {
-  "name": "bloc-frontend-project-starter",
+  "name": "blocChat",
   "version": "0.0.2",
-  "description": "Starter project for the Bloc Frontend Web Development",
+  "description": "Bloc chat application as part of the front-end training program",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bloc/bloc-frontend-project-starter"
+    "url": "https://github.com/builditdan/bloc-chat"
   },
   "main": "server.js",
   "scripts": {
