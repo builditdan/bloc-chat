@@ -6,8 +6,8 @@
     $scope.conversationList = conversationTopics.all;
     $scope.askConversation = conversationTopics.ask;
     $scope.deleteConversation = conversationTopics.delete;
-    $scope.formatDate = conversationTopics.fdate;
-    $scope.fileOpen = conversationTopics.fopen;
+    $scope.fileOpen = conversationTopics.fOpen;
+    //$scope.idSelectedConversation = null;
     
     $("#btnOpenFileDialog").change(conversationTopics.add);
            

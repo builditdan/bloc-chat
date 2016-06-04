@@ -2,7 +2,8 @@
   
   //https://bloc-chat-7529d.firebaseio.com/
   function conversationTopics($firebaseArray, $firebaseObject) {
-    var chatTopics = {};
+   
+  
     
     function toTitleCase(str) {
       return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -75,7 +76,7 @@
           }
           bootbox.prompt("Enter name of conversation to start?", function(result) {                
             if (result === null || result === "") {                                             
-              bootbox.alert("No converstation specified");                            
+              bootbox.alert("No conversation specified");                            
             } else {
               topic = toTitleCase(result);
               conversations.$add({ conversation: topic, last_comment:comment, topic_image:image, dateAdded: Date() }).then(function(firebaseRef) {
@@ -97,18 +98,18 @@
       
    };
     
-    var firebaseRef = new Firebase("https://bloc-chat-7529d.firebaseio.com/");
-    var conversations = $firebaseArray(firebaseRef.child('conversations'));
+   var firebaseRef = new Firebase("https://bloc-chat-7529d.firebaseio.com/");
+   var conversations = $firebaseArray(firebaseRef.child('conversations'));
+   var current_conversation = "Pick a room!";
+   var current_conversation_id = null;
     
-  
   return {
     all: conversations,
     ask: askConversation,
     add: addConversation,
     delete: deleteConversation,
     fdate: formatDate,
-    fopen: openfileDialog
-    
+    fOpen: openfileDialog
    }
 
   }

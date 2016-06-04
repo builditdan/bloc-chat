@@ -1,38 +1,64 @@
-<div id="col1">
+<div ng-controller="conversationController">
+    <div id="col1">
 
+        <div id="conversation-title">Conversations</div>
+        <button id="new-button" ng-click="askConversation()">New</button>
+        <img src="assets/images/blue-line.png" width="100%">
+
+        <br>
+
+        <ul>
+          <li ng-repeat="elem in conversationList | orderBy:'-dateAdded' : reverse" ng-click="setCurrentConversation(elem.conversation, elem.$id)" ng-class="{selected: elem.$id === currentConversationId()}" >
+            <div id="conversation-block-0"  >
+              <p id="conversation-topic" ng-dblclick="deleteConversation(elem)">{{elem.conversation}}</p>
+              <p id="conversation-date">{{formatDate(elem.dateAdded)}}</p>
+            </div>
+            <div id="conversation-block-1">
+              <p id="last-message">{{elem.last_comment}}</p>
+            </div>
+            <div id="conversation-block-2">
+
+                <img id="conversation-image" src="{{elem.topic_image}}">
+
+            </div>
+
+          </li>
+        </ul>
+
+        <input type="file" id="btnOpenFileDialog" />
+
+    </div>
+
+  </div>
   
-  
-    <div ng-controller="conversationController">
-      <div id="conversation-title">Conversations</div>
-      <button id="new-button" ng-click="askConversation()">New</button>
-      <img src="assets/images/blue-line.png" width="100%">
-   
-      <br>
-      
-      <ul>
-        <li ng-repeat="elem in conversationList | orderBy:'-dateAdded' : reverse">
-          <div id="conversation-block-0">
-            <p id="conversation-topic" ng-dblclick="deleteConversation(elem)">{{elem.conversation}}</p>
-            <p id="conversation-date">{{formatDate(elem.dateAdded)}}</p>
-          </div>
-          <div id="conversation-block-1">
-            <p id="last-message">{{elem.last_comment}}</p>
-          </div>
-          <div id="conversation-block-2">
+  <div ng-controller="chatController">
+
+    <div id="active-conversation">{{currentConversation()}}</div>
+
+    <div id="col2">
+        <ul>
+          <li id="li-chat" ng-repeat="elem in chatList() | orderBy:'-dateAdded' : reverse">
+              <p class="chat-name" ng-dblclick="deleteConversation(elem)">{{elem.username}}</p>
+            <div id="chat-block">
+              <p id="chat-message">{{elem.message}}</p>
+              <p class="chat-date">{{formatDate(elem.dateAdded)}}</p>
+            </div>
             
-              <img id="conversation-image" src="{{elem.topic_image}}">
-       
-          </div>
-          
-        </li>
-      </ul>
-      
-      
-      <input type="file" id="btnOpenFileDialog" />
+          </li>
+        </ul>
+     
+        <div id="chat-button-background">
+          <button id="new-chat-button" ng-click="addChat(currentConversationId(), currentUser, aChat)">Send</button>
+          <input id="chat-box" type="text" ng-click="aChat = null" ng-model="aChat"/>
+        </div>
       
     </div>
+    
+    
+     
+  </div>
   
-</div>
+  
 
 <!--
 <canvas id="myCanvas" width="500" height="500"
