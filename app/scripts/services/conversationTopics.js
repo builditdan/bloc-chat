@@ -2,9 +2,7 @@
   
   //https://bloc-chat-7529d.firebaseio.com/
   function conversationTopics($firebaseArray, $firebaseObject) {
-   
   
-    
     function toTitleCase(str) {
       return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     };
@@ -42,25 +40,7 @@
       }
     };
     
-    function myCanvas() {
-      var c = document.getElementById("myCanvas");
-      var ctx = c.getContext("2d");
-      var img = document.getElementById("scream");
-
-      var iw=img.width;
-      var ih=img.height;
-      var scale=Math.min((500/iw),(500/ih));
-      var iwScaled=iw*scale;
-      var ihScaled=ih*scale;
-
-
-      //c.width=50;
-      //c.height=50;
-      ctx.drawImage(img,0,0,500,500);
-      return c.toDataURL();               
-                                              
-    }
-    
+        
     function addConversation(e) {
       var topic = "";
       var comment = "";

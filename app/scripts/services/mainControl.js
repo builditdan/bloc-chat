@@ -1,8 +1,8 @@
 (function() {
   
   //https://bloc-chat-7529d.firebaseio.com/
-  function mainControl($firebaseArray, $firebaseObject, chatTopics) {
-   
+  function mainControl($firebaseArray, $firebaseObject, chatTopics, $cookies) {
+    
     function toTitleCase(str) {
       return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     };
@@ -27,8 +27,6 @@
       return month + "/" + day + "/" + year.toString().slice(-2) + " " + hour + ":" + minute + amPM;
     };
  
-    function setCurrentUser(user) {
-    };
  
     function setCurrentConversation(conversation,id) {
      current_conversation_id = id;
@@ -48,12 +46,10 @@
 //   var firebaseRef = new Firebase("https://bloc-chat-7529d.firebaseio.com/");
 //   var conversations = $firebaseArray(firebaseRef.child('conversations'));
    var current_conversation = "Pick a room!";
-   var current_conversation_id = "x";
-   var current_user = "Dan";
+   var current_conversation_id = null;
+   
   
   return {
-    user: current_user,
-    getUser: setCurrentUser,
     setCurr: setCurrentConversation,
     conversation: getCurrentConversation,
     conversationId: getCurrentConversationId,
@@ -67,7 +63,7 @@
   
   angular
   .module('blocChat')
-  .factory('mainControl',['$firebaseArray', '$firebaseObject', 'chatTopics', mainControl]);
+  .factory('mainControl',['$firebaseArray', '$firebaseObject', 'chatTopics', '$cookies', mainControl]);
   
 })();
 

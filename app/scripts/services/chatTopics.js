@@ -1,7 +1,7 @@
 (function() {
   
   //https://bloc-chat-7529d.firebaseio.com/
-  function chatTopics($firebaseArray, $firebaseObject) {
+  function chatTopics($firebaseArray, $firebaseObject, userControl) {
 
     function toTitleCase(str) {
       return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -52,11 +52,15 @@
     };
     
     function addChat(conversation_id, current_username, chat_message) {
+      if (current_username === null) { 
+        userControl.setUsername();
+        return;
+      }
       if (conversation_id === null) {
         bootbox.alert("No converstation selected");                                  
         return;
       }        
-        if (chat_message === null || chat_message === "") {                                             
+        if (chat_message === null || chat_message === "" || !chat_message) {                                             
           bootbox.alert("No message specified");                            
         } else {
           chat = toTitleCase(chat_message);
@@ -83,7 +87,7 @@
   
   angular
   .module('blocChat')
-  .factory('chatTopics',['$firebaseArray', '$firebaseObject', chatTopics]);
+  .factory('chatTopics',['$firebaseArray', '$firebaseObject', 'userControl', chatTopics]);
   
 })();
 
