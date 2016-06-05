@@ -26,7 +26,7 @@ body {margin:0; }
     margin-right:10px;
     margin-top:25px;
     margin-left: 10px;
-    /*min-width: 275px;*/
+    min-width: 375px;
 }
 
 #footer {
@@ -38,6 +38,7 @@ body {margin:0; }
 }
 
 #conversation-title {
+  
   font-size: 40px;
   margin-left:10px;
   margin-top:30px;
@@ -45,6 +46,8 @@ body {margin:0; }
   font-family:"American Typewriter";
   font-weight: 1000;
   color:gray;
+  width:100%;
+  height:100%; 
 }
 
 #conversation-topic {
@@ -70,6 +73,7 @@ body {margin:0; }
   float:left;
   font-size: 15px;
   margin-left:8px;
+  width: 85%;
   clear:both;
 
 }
@@ -85,6 +89,8 @@ body {margin:0; }
   
   float:right;
   padding-bottom:5px;
+  padding-left:5px;
+  position: relative;
 }
 
 
@@ -97,12 +103,13 @@ ul
 }
 
 li {
-  height:220px;
+  height:100%; /*220px;*/
   width:95%;
   background-color: white;
   margin-left: auto;
   margin-right:auto;
   margin-top: 15px;
+  display:inline-block;
 
 }
 
@@ -152,6 +159,10 @@ li {
   float: left; 
   margin-top:5px;
   height: 100%;
+  /*overflow:scroll; */
+  overflow-y: auto
+  /*height: 2000px;*/
+  
  
 }
 
@@ -176,12 +187,16 @@ li {
 
 #li-chat {
   background-color: #ffff88;
-  height:125px;
+  /*height:125px;*/
+  height:auto;
+ 
 }
 
 #chat-block {
+  margin-left:5px;
   width:100%;
-  height: 75px;
+  /*height: 75px;*/
+  height:auto;
   float:left;
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
@@ -194,7 +209,7 @@ li {
 
 .chat-name {
   float:left;
-  margin-left:5px;
+  margin-left:10px;
   margin-right:25px;
   font-weight: 2000;
   font-size: 20px;

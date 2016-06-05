@@ -38,9 +38,9 @@
     <div id="col2">
         <ul>
           <li id="li-chat" ng-repeat="elem in chatList() | orderBy:'-dateAdded' : reverse">
-              <p class="chat-name" ng-dblclick="deleteConversation(elem)">{{elem.username}}</p>
-            <div id="chat-block">
-              <p id="chat-message">{{elem.message}}</p>
+              <p class="chat-name" >{{elem.username}}</p>
+            <div id="chat-block" ng-dblclick="deleteChat(elem)">
+              <p>{{elem.message}}</p>
               <p class="chat-date">{{formatDate(elem.dateAdded)}}</p>
             </div>
             

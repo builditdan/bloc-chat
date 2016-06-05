@@ -3,11 +3,24 @@
   //https://bloc-chat-7529d.firebaseio.com/
   function conversationTopics($firebaseArray, $firebaseObject) {
   
+ /*****************************
+* Private 
+* Upcases first character of the sentence
+* @param {String} str
+* @return {String} 
+*****************************/
+
     function toTitleCase(str) {
       return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     };
     
-    
+/*****************************
+* Public 
+* Formats the time for conversations and chat messages
+* @param {Date} dt
+* @return {String} 
+*****************************/
+
     function formatDate(dt) {
       /// formats a javascript Date object into a 12h AM/PM time string
       var date_obj = new Date(dt);
@@ -29,10 +42,17 @@
       alert(e.val());
     };
     
+  
     function openfileDialog() {
       $("#btnOpenFileDialog").click();
     };
     
+/*****************************
+* Public 
+* Delete conversation
+* @param {Object} elem
+*****************************/
+
     function deleteConversation(elem) {
       result = confirm("Want to delete?");
       if (result) {
@@ -40,7 +60,13 @@
       }
     };
     
-        
+     
+/*****************************
+* Public 
+* Add conversation using a bootbox prompt
+* @param {Object} e
+*****************************/
+       
     function addConversation(e) {
       var topic = "";
       var comment = "";
@@ -72,7 +98,13 @@
    
    };
     
-   function askConversation() {
+     
+ /*****************************
+* Private 
+* Prompt for the conversation image
+*****************************/
+
+    function askConversation() {
      
       openfileDialog();
       

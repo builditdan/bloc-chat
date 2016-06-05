@@ -3,8 +3,8 @@
   function chatController($scope, chatTopics) {
 
     $scope.chatList = chatTopics.all;
-    $scope.deleteChat = chatTopics.delete;
     $scope.addChat = chatTopics.add;
+    $scope.deleteChat = chatTopics.delete;
        
   }
 

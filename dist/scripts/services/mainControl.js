@@ -3,9 +3,23 @@
   //https://bloc-chat-7529d.firebaseio.com/
   function mainControl($firebaseArray, $firebaseObject, chatTopics, $cookies) {
     
+/*****************************
+* Private 
+* Upcases first character of the sentence
+* @param {String} str
+* @return {String} 
+*****************************/
+    
     function toTitleCase(str) {
       return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
     };
+    
+/*****************************
+* Public 
+* Formats the time for conversations and chat messages
+* @param {Date} dt
+* @return {String} 
+*****************************/
     
     function formatDate(dt) {
       /// formats a javascript Date object into a 12h AM/PM time string
@@ -26,25 +40,41 @@
       }
       return month + "/" + day + "/" + year.toString().slice(-2) + " " + hour + ":" + minute + amPM;
     };
- 
- 
+    
+ /*****************************
+* Public 
+* Set the current conversation
+* @param {String} conversation name
+* @param {String} converstation id
+*****************************/
+
     function setCurrentConversation(conversation,id) {
      current_conversation_id = id;
      current_conversation = conversation;
      chatTopics.get(current_conversation_id)
     };
     
+/*****************************
+* Public 
+* Get the current conversation
+* @return {String} conversation name
+*****************************/
+    
     function getCurrentConversation() {
       return current_conversation;
     };
+    
+/*****************************
+* Public 
+* Get the current conversation id
+* @return {String} conversation id
+*****************************/
     
     function getCurrentConversationId() {
       return current_conversation_id;
     };
     
-    
-//   var firebaseRef = new Firebase("https://bloc-chat-7529d.firebaseio.com/");
-//   var conversations = $firebaseArray(firebaseRef.child('conversations'));
+
    var current_conversation = "Pick a room!";
    var current_conversation_id = null;
    

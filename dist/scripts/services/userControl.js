@@ -2,6 +2,11 @@
   
   function userControl($cookies) {
   
+ /*****************************
+* Public 
+* Prompt the user to provide a username
+*****************************/
+    
     function getUsername() {
         var current_user = null; //$cookies['blocChatCurrentUser'];
         delete $cookies["blocChatCurrentUser"];
@@ -20,6 +25,12 @@
             });
           }
     }
+    
+/*****************************
+* Public 
+* Get the current user
+* @return {String} username
+*****************************/
     
     function getCurrentUser() {
       username =  $cookies['blocChatCurrentUser'];
