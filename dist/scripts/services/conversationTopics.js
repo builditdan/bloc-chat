@@ -69,7 +69,7 @@
        
     function addConversation(e) {
       var topic = "";
-      var comment = "";
+      var comment = "Just a little sad but but no message have been created for this converstation yet.";
       var image = "";
       
       if (e.target.files[0] != undefined) {
