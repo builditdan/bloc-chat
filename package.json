@@ -1,7 +1,7 @@
 {
   "name": "blocChat",
   "version": "0.0.2",
-  "description": "Bloc chat application as part of the front-end training program",
+  "description": "Bloc Chat application as part of the front-end training program",
   "repository": {
     "type": "git",
     "url": "https://github.com/builditdan/bloc-chat"
